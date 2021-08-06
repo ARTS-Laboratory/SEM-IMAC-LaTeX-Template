@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: imac.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: imac.bst
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+Database file #1: imac.bib
+You've used 4 entries,
+            2255 wiz_defined-function locations,
+            575 strings with 4675 characters,
+and the built_in function-call counts, 853 in all, are:
+= -- 48
+> -- 39
+< -- 2
++ -- 15
+- -- 11
+* -- 72
+:= -- 125
+add.period$ -- 4
+call.type$ -- 4
+change.case$ -- 2
+chr.to.int$ -- 6
+cite$ -- 4
+duplicate$ -- 49
+empty$ -- 109
+format.name$ -- 11
+if$ -- 194
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 7
+newline$ -- 15
+num.names$ -- 4
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 14
+stack$ -- 0
+substring$ -- 22
+swap$ -- 19
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 6
+width$ -- 5
+write$ -- 36

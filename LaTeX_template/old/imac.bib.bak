@@ -1,0 +1,48 @@
+% Encoding: UTF-8
+
+
+@book{lamport,
+   author =    {Lamport, L.},
+   title =     {\LaTeX: A Document Preparation System},
+   publisher = {Addison-Wesley},
+   year =      {1994},
+   edition = {2nd},
+}
+
+@book{goossens,
+   author =    {Goossens, M. and Mittlebach, F. and Samarin, A.},
+   title =     {The \LaTeX Companion},
+   publisher = {Addison-Wesley},
+   year =      {1994},
+}
+
+@book{kopka,
+   author =    {Kopka, H. and Daly, P. W.},
+   title =     {A Guide to  \LaTeX2e},
+   publisher = {Addison-Wesley},
+   year =      {1995},
+}
+%%%%%%%%%%%
+% I had no idea how to reference this, so it's fudged.
+@inProceedings{ewins,
+   title = {Notation for Modal Testing \& Analysis},
+   booktitle = {Imperial College, London SW7 2BX, UK},
+   author = {Ewins, D. J.},
+   year = 1993,
+}
+
+@Article{Downey2020Millisecondmodelupdating,
+  author    = {Austin Downey and Jonathan Hong and Jacob Dodson and Michael Carroll and James Scheppegrell},
+  journal   = {Mechanical Systems and Signal Processing},
+  title     = {Millisecond model updating for structures experiencing unmodeled high-rate dynamic events},
+  year      = {2020},
+  month     = {April},
+  pages     = {106551},
+  volume    = {138},
+  doi       = {10.1016/j.ymssp.2019.106551},
+  publisher = {Elsevier {BV}},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+\end{document}
