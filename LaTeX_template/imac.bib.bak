@@ -44,12 +44,7 @@
   url    = {https://github.com/ARTS-Laboratory/Open_Vibrations},
 }
 
-@InProceedings{Ishrat2019RealtimeForecasting,
-  author    = {Ishrat Singh and Philip Conrad and Puja Chowdhury and Jason D. Bakos and Austin Downey},
-  booktitle = {IMAC 39},
-  title     = {Real-time Forecasting of Vibrations with Nonstationarities},
-  year      = {2021},
-  month     = {Febuary},
+@Article{,
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

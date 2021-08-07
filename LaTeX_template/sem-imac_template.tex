@@ -1,233 +1,119 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%% SEM-IMAC_template.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% This is a template for the IMAC (International Modal Analysis Conference) style
 %%% 
-%%%
+%%% This was developed by Austin Downey for SEM-IMAC XL in 2022. 
 %%% 
 %%%
 
 
-\documentclass{article}
-\usepackage{mathptmx}
-\usepackage{imac}
-%\usepackage{helvet}   % Uncomment this line if you have ps helvetica 
-%                       fonts available on your system. Things will work better.
-%                       Trust me.
-%                       Comment it out if you do not.
+\documentclass[10pt,letterpaper]{article}
+\usepackage[left=0.75in, right=0.75in, top=0.75in, bottom=1.00in]{geometry}
+\usepackage{mathptmx} % needed for time font
+\usepackage[hidelinks]{hyperref} % added for inline hyperlinks
+\usepackage[english]{babel} % added for filler text
+\usepackage{blindtext} % added for filler text
+\usepackage{graphicx} % added for figures
+\setlength{\parindent}{0em} % remove the indent for all paragraphs
+\setlength{\parskip}{1em} % septs the spacing between paragraphs
+\usepackage{booktabs} % added for tables
 
-\usepackage[hidelinks]{hyperref}
+% Adjust the font and style of title and autor section
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}{\Large}{\Large}{\typeout{OK 1}}{\typeout{Failed 1}}
+\patchcmd{\@maketitle}{\large \lineskip}{\large \lineskip}{\typeout{OK 2}}{\typeout{Failed 2}}
+\makeatother
 
-% We don't want any headers or footers. IMAC will put on what they like.
-% \pagestyle{empty}
+% set the Section headers, no subsections defined
+\usepackage[explicit]{titlesec}
+\renewcommand{\thesection}{}
+\titleformat{\section}
+  {\normalfont}{\thesection}{0pt}{\MakeUppercase{\textbf{#1}}}
+\titlespacing*{\section}
+  {0pt}{5ex}{-1em}
 
-% The following prevents the maketitle from putting a page number on 
-% page 1
+% build the keyword command
+\newcommand{\keywords}[1]{\vspace{2ex} \noindent \textbf{Keywords:} #1}
 
 
-% You also need to have the packages: cite, citesort, and ifthen 
-% (ifthen comes with the standard distribution of LaTeX).
-% They can be obtained from any CTAN server. Probably where you found 
-% this.
 
-%\renewcommand{\@cite}[2]{{$^{[#1]}$\ifthenelse{\boolean{@tempswa}}{,#2}{}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Start of the document
+%%% 
 
-\newcommand{\degrees}{$^{\circ}$~}
-                         
+
 \begin{document}
+\date{} % keeps the date frome being printed
 
-%%% Don't want date printed
-\date{}
+% A short descriptive title of your work
+\title{\LaTeX\ Template for the International Modal Analysis Conference (IMAC)}
 
-\title{\Large\textbf{\LaTeX\ PACKAGE FOR WRITING
-PAPERS IN\\
-INTERNATIONAL MODAL ANALYSIS CONFERENCE (IMAC) FORMAT}}
-
-
+% list the authors of the work. 
 \author{\vspace{.25in}\\
-\textbf{Joseph C. Slater}\\
-\\
- {\normalsize Department of Mechanical and Materials Engineering} \\
- {\normalsize Wright State University}\\
- {\normalsize Colonel Glenn Highway}\\
- {\normalsize Dayton, OH 45435}\\
+Austin Downey$^1$, Babe the Blue Ox$^2$, and Paul Bunyan$^3$\\ \\ % place a double line break after authors
+ $^1$Department of Mechanical Engineering \\
+	University of South Carolina, Columbia, SC 29208 \\ \\ % place a double line break between institutions
+ $^2$Department of Farm Animal Health \\
+ $^3$Department of Forestry and Environmental Science \\
+	North American Forestry University, New Town, WI 55401 \\
 }
 \maketitle
-%\thispagestyle{empty}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{abstract}
-Just like in any other \LaTeX\  document, you begin the abstract, make 
-the title, and define the author as shown in the example. Not that 
-IMAC requires that the author names be in bold, so you have to do this 
-yourself. In addition, I haven't yet hacked the style definition for 
-the title. Maybe I will later, but that's a minor inconvenience. 
-
-For feedback and support, please see the \href{https://github.com/josephcslater/IMAC}{IMAC style home page}.
-\end{abstract}
 
 
-IMAC \cite{Downey2020Millisecondmodelupdating}
+\section{abstract}
+This is a \LaTeX template for SEM-IMAC. For feedback and support, please see the \href{https://github.com/ARTS-Laboratory/SEM-IMAC-template}{GitHub repository home page that can be found at https://github.com/ARTS-Laboratory/SEM-IMAC-template}. No promises are made in terms of timely help from the author. 
 
+\keywords{Keyword One, Keyword Two, Keyword Three, Keyword Four}
 
 \section{Introduction}
 
-First thing to note is that the IMAC style indents the first 
-line of each paragraph, including the paragraph immediately following 
-a section header. You can override the \LaTeX\ default of not 
-indenting by using the \indent command each time after a 
-\verb*a\sectiona command or by using the package \verb*zindentfirstz 
-which can be downloaded from any CTAN location. 
-
-The second thing which you may need to do is obtain and install the 
-packages: \verb*zcitez, \verb*zcitesortz, \verb*zifthenz, and \verb*zamsmathz. Things will also 
-work out a little nicer if you have the \verb*zhelvetz package, but 
-it is not necessary. If you do have the \verb*zhelvetz package, you 
-should uncomment the line \verb*z\usepackage{helvet}z above.
-
-The PDF\textregistered\ file \verb*zimac.pdfz can be viewed for comparison to the results 
-you obtain from \LaTeX ing this document. 
-
-A few macros have been defined below for conforming to the 
-IMAC\cite{Downey2020Millisecondmodelupdating} %notation convention (See Table \ref{dm}). If you use them, you can simply redefine the 
-macros according to the journal requirements when the time comes for submission.
-I've defined only those that I thought were either difficult or do not 
-conform to normal textbook standards. You may find it useful to define 
-your own macros at the end of the file \verb*zimac.styz, but please 
-make sure that you don't delete them the next time you update!
-
-In Table \ref{dm} you'll also see some code for making a partitioned 
-matrix. Sorry, but I don't know how to turn this into an 
-environment. If you figure it out, let me know and I'll incorporate it. 
-The colons form the horizontal delimiters and the \verb*z\hdotsforz 
-command forms the vertical delimiters. The first argument represents 
-a spacing of the dots, and the second required argument is the number 
-of columns that the dotted line should span. 
-
-
-%\begin{table*}
-%	\begin{tabular}{lll}
-%	\matr{M} &\verb*c\matr{M}c&  matrix\\
-%	
-%	\dmat{M}&\verb*c\dmat{M}c& diagonal matrix\\
-%	
-%	\vect{\Phi} & \verb*a\vect{\Phi}a & vector \\
-%	
-%	\elem{M_{11}}&\verb*z\elem{M_{11}}z& single element of \matr{M}\\
-%	
-%	\pnorm{x} &\verb*a\pnorm{x}a & p-norm of \vect{x}\\
-%%%%%  Look between these lines for the partitioned matrix code
-%	$\begin{bmatrix}\matr{M}_{11}&:&\matr{M}_{12}\\
-%		\hdotsfor[2]{1}&:&\hdotsfor[2]{1}\\
-%		\matr{M}_{21}&:&\matr{M}_{22}
-%	\end{bmatrix}$ 
-%%%%%  Look between these lines for the partitioned matrix code
-%%%%%  The stuff below this is for displaying the code. Ignore it.
-%	&\begin{minipage}{3.5in}
-%	{\verb*z\begin{bmatrix}z\\\verb*z\matr{M}_{11}&:&\matr{M}_{12}\\z\\
-%\verb*z\hdotsfor[2]{1}&:&\hdotsfor[2]{1}\\z\\
-%\verb*z\matr{M}_{21}&:&\matr{M}_{22}z\\\verb*z\end{bmatrix}z}
-%\end{minipage}
-%	& partitioned matrix\\
-%	\end{tabular}
-%	\caption{\label{dm}Defined macros}
-%
-%\end{table*} 
-
-Please contact me at \verb*zjoseph.slater@wright.eduz if you find bugs in this. 
-I'll do my best to fix them in a timely fashion. Please don't contact me with respect to general \LaTeX\ 
-questions. 
-For help with \LaTeX\ please consult Lamport\cite{lamport}, Goossens 
-et al\cite{goossens}, and/or Kopka and Daly\cite{kopka}. Additional 
-resources are available through the \TeX\ newsgroup \verb*zcomp.text.texz, 
-the 
-CTAN archives at \verb*zhttp://www.ucc.ie/cgi-bin/ctanz, and the \TeX 
-users group (TUG) home page (\verb*zhttp://www.tug.org/z).
-
-From here on is just some examples to give you some 
-continuing examples of how to do things. The table would have been 
-better off if I had used the \verb*zhhlinez package.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{background}
-
-
-\section{ANALYSIS}
-
-
-\section{CONCLUSION}
-
-\section{ACKNOWLEDGEMENTS}
-
-\section{REFERENCES}
-
-\indent In bladed disk assemblies, the disk acts as a coupling device between the
-blades.  As the stiffness of the disk increases, blade coupling
-decreases. It has been shown that weak interblade coupling leads to
-high levels of mode localization when blades are 
-mistuned.  
-
+Every good paper needs to cite some prior work IMAC \cite{Downey2021OpenVibrations,Ishrat2019RealtimeForecasting,Downey2020Millisecondmodelupdating,Downey2016HighCapacityVariable}, but should also reference figures and equations in the text. For example, Figure~\ref{fig:suspension} shows an image of a car suspension that is in the public domain. The displacement of the time can be modeled as a 1-DOF system as shown in equation~\ref{eq:1-DOF}.
+\begin{equation}
+m\ddot{x} + c\dot{x} + kx = F
+\label{eq:1-DOF}
+\end{equation}
+SEM IMAC does not want indentation for each paragraph. So the \LaTeX template takes care of that. Just make sure to have a space between new paragraphs but do not add spacing between equations you want to be included in a paragraph. 
 
 \begin{figure}
-\begin{center}
-\fbox{There once was a figure here}
-\end{center}
-\caption{\label{undeformed}Here is a figure.}
+	\centering
+	\includegraphics[width=2in]{figures/suspension.jpg}
+	\caption{A public domain picture of Car suspension that is designed for vibration control.}
+	\label{fig:suspension}
 \end{figure}
 
-\subsection{This is a subsection}
-
-\indent All models used in this study were variations of the symmetric,
-constant stiffness system referred to as the baseline model (Figure
-\ref{undeformed}).  Yada yada.
-
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-    & Random 1      &     Random 2  &    Random 3\\
-\cline{2-4}
-\raisebox{2ex}{Blade Number}  & $10^{-3}$ Kg   &    $10^{-3}$ Kg &    $10^{-3}$  Kg\\
-\hline
-\hline
-
-1   &    0.0168  & 0.3343  & 0.3413\\
-2    &   0.0260  & 0.2867  & 0.4431\\
-3    &   0.2579  & 0.4529  & 0.3710\\
-
-\hline
-
-\end{tabular}
-\end{center}
-\caption{\label{random} Simple table.}
+This is a new paragraph so there is a space between it and the prior text. Good papers may also have tables, \href{https://www.tablesgenerator.com/}{the website tablesgenerator.com} is a great way to build tables.  
+\begin{table}[]
+	\centering
+	\caption{Results for a fictional test}
+	\label{table:test}
+	\begin{tabular}{@{}lccccccc@{}}
+		\toprule
+		 & test 1 & test 2 & test 3 & test 4 & test 5 & test 6 & test 7 \\ \midrule
+		metric 1 & 0.9 & 0.6 & 0.8 & 0.4 & 0.3 & 0.6 & 0.3 \\
+		metric 2 & 1 & 12 & 5 & 32 & 8 & 32 & 2 \\ \bottomrule
+	\end{tabular}
 \end{table}
 
-... and that's it! If you can't get it to work, I can be reached at 
-\verb*zjoseph.slater@wright.eduz.
+
+\blindtext
 
 
+\section{background}
+\blindtext
 
+\section{ANALYSIS}
+\blindtext
 
-\section*{Acknowledgments}
-Note that for the Acknowledgments you need to use the 
-\verb*z\sectionz command in the starred form to avoid getting the 
-section number.
+\section{CONCLUSION}
+\blindtext
 
-Thanks to Leslie Lamport\cite{lamport}, Goossens, Mittelbach, and 
-Samarin\cite{goossens} and all others  who've built \LaTeX\ into what it is 
-today.
+\section{ACKNOWLEDGEMENTS}
+\blindtext
 
-
-
-
+\section{References}
+\vspace{-1.5ex}
 \bibliographystyle{imac_2021.bst}
-
+\renewcommand{\refname}{}
 \bibliography{imac}
-
-
-
-
 
 \end{document}
