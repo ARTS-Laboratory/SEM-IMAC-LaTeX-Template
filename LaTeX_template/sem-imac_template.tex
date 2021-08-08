@@ -16,6 +16,8 @@
 \setlength{\parindent}{0em} % remove the indent for all paragraphs
 \setlength{\parskip}{1em} % septs the spacing between paragraphs
 \usepackage{booktabs} % added for tables
+\usepackage{caption} % added for figure captions
+\captionsetup{justification=raggedright,singlelinecheck=false}
 
 % Adjust the font and style of title and autor section
 \usepackage{etoolbox}
@@ -43,77 +45,77 @@
 
 
 \begin{document}
-\date{} % keeps the date frome being printed
-
-% A short descriptive title of your work
-\title{\LaTeX\ Template for the International Modal Analysis Conference (IMAC)}
-
-% list the authors of the work. 
-\author{\vspace{.25in}\\
-Austin Downey$^1$, Babe the Blue Ox$^2$, and Paul Bunyan$^3$\\ \\ % place a double line break after authors
- $^1$Department of Mechanical Engineering \\
-	University of South Carolina, Columbia, SC 29208 \\ \\ % place a double line break between institutions
- $^2$Department of Farm Animal Health \\
- $^3$Department of Forestry and Environmental Science \\
-	North American Forestry University, New Town, WI 55401 \\
-}
-\maketitle
-
-% Include a short abstract at the beginning of the submission.
-\section{abstract}
-This is a \LaTeX template for SEM-IMAC. For feedback and support, please see the \href{https://github.com/ARTS-Laboratory/SEM-IMAC-template}{GitHub repository home page that can be found at https://github.com/ARTS-Laboratory/SEM-IMAC-template}. No promises are made in terms of timely help from the author. 
-
-\keywords{Keyword One, Keyword Two, Keyword Three, Keyword Four}
-
-\section{Introduction}
-
-Every good paper needs to cite some prior work IMAC \cite{Downey2021OpenVibrations,Ishrat2019RealtimeForecasting,Downey2020Millisecondmodelupdating,Downey2016HighCapacityVariable}, but should also reference figures and equations in the text. For example, Figure~\ref{fig:suspension} shows an image of a car suspension that is in the public domain. The displacement of the time can be modeled as a 1-DOF system as shown in equation~\ref{eq:1-DOF}.
-\begin{equation}
-m\ddot{x} + c\dot{x} + kx = F
-\label{eq:1-DOF}
-\end{equation}
-SEM IMAC does not want indentation for each paragraph. So the \LaTeX template takes care of that. Just make sure to have a space between new paragraphs but do not add spacing between equations you want to be included in a paragraph. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=2in]{figures/suspension.jpg}
-	\caption{A public domain picture of car suspension that is designed for vibration control.}
-	\label{fig:suspension}
-\end{figure}
-
-This is a new paragraph so there is a space between it and the prior text. Good papers may also have tables, \href{https://www.tablesgenerator.com/}{the website tablesgenerator.com} is a great way to build tables.  
-\begin{table}[]
-	\centering
-	\caption{Results for a fictional test}
-	\label{table:test}
-	\begin{tabular}{@{}lccccccc@{}}
-		\toprule
-		 & test 1 & test 2 & test 3 & test 4 & test 5 & test 6 & test 7 \\ \midrule
-		metric 1 & 0.9 & 0.6 & 0.8 & 0.4 & 0.3 & 0.6 & 0.3 \\
-		metric 2 & 1 & 12 & 5 & 32 & 8 & 32 & 2 \\ \bottomrule
-	\end{tabular}
-\end{table}
-
-
-\blindtext
-
-
-\section{background}
-\blindtext
-
-\section{ANALYSIS}
-\blindtext
-
-\section{CONCLUSION}
-\blindtext
-
-\section{ACKNOWLEDGEMENTS}
-\blindtext
-
-\section{References}
-\vspace{-1.5ex}
-\bibliographystyle{imac_2021.bst}
-\renewcommand{\refname}{}
-\bibliography{imac}
+	\date{} % keeps the date frome being printed
+	
+	% A short descriptive title of your work
+	\title{\LaTeX\ Template for the International Modal Analysis Conference (IMAC)}
+	
+	% list the authors of the work. 
+	\author{\vspace{.25in}\\
+	Austin Downey$^1$, Babe the Blue Ox$^2$, and Paul Bunyan$^3$\\ \\ % place a double line break after authors
+	 $^1$Department of Mechanical Engineering \\
+		University of South Carolina, Columbia, SC 29208 \\ \\ % place a double line break between institutions
+	 $^2$Department of Farm Animal Health \\
+	 $^3$Department of Forestry and Environmental Science \\
+		North American Forestry University, New Town, WI 55401 \\
+	}
+	\maketitle
+	
+	% Include a short abstract at the beginning of the submission.
+	\section{abstract}
+		This is a \LaTeX template for SEM-IMAC. For feedback and support, please see the \href{https://github.com/ARTS-Laboratory/SEM-IMAC-template}{GitHub repository home page that can be found at https://github.com/ARTS-Laboratory/SEM-IMAC-template}. No promises are made in terms of timely help from the author. 
+	
+	\keywords{Keyword One, Keyword Two, Keyword Three, Keyword Four}
+	
+	\section{Introduction}
+	
+		Every good paper needs to cite some prior work IMAC \cite{Downey2021OpenVibrations,Ishrat2019RealtimeForecasting,Downey2020Millisecondmodelupdating,Downey2016HighCapacityVariable}, but should also reference figures and equations in the text. For example, Figure~\ref{fig:suspension} shows an image of a car suspension that is in the public domain. The displacement of the time can be modeled as a 1-DOF system as shown in equation~\ref{eq:1-DOF}.
+		\begin{equation}
+		m\ddot{x} + c\dot{x} + kx = F
+		\label{eq:1-DOF}
+		\end{equation}
+		SEM IMAC does not want indentation for each paragraph. So the \LaTeX template takes care of that. Just make sure to have a space between new paragraphs but do not add spacing between equations you want to be included in a paragraph. 
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=2in]{figures/suspension.jpg}
+			\caption{A public domain picture of car suspension that is designed for vibration control.}
+			\label{fig:suspension}
+		\end{figure}
+		
+		This is a new paragraph so there is a space between it and the prior text. Good papers may also have tables, \href{https://www.tablesgenerator.com/}{the website tablesgenerator.com} is a great way to build tables.  
+		\begin{table}[]
+			\centering
+			\caption{Results for a fictional test}
+			\label{table:test}
+			\begin{tabular}{@{}lccccccc@{}}
+				\toprule
+				 & test 1 & test 2 & test 3 & test 4 & test 5 & test 6 & test 7 \\ \midrule
+				metric 1 & 0.9 & 0.6 & 0.8 & 0.4 & 0.3 & 0.6 & 0.3 \\
+				metric 2 & 1 & 12 & 5 & 32 & 8 & 32 & 2 \\ \bottomrule
+			\end{tabular}
+		\end{table}
+		
+		
+		\blindtext
+	
+	
+	\section{background}
+		\blindtext
+	
+	\section{ANALYSIS}
+		\blindtext
+	
+	\section{CONCLUSION}
+		\blindtext
+	
+	\section{ACKNOWLEDGEMENTS}
+		\blindtext
+	
+	\section{References}
+		\vspace{-1.5ex}
+		\bibliographystyle{imac_2021.bst}
+		\renewcommand{\refname}{}
+		\bibliography{imac}
 
 \end{document}
