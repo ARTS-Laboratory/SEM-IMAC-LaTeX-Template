@@ -24,14 +24,14 @@
 \usepackage{cite}					% added to allow for ranges in a list of citations
 \usepackage{nopageno} % added to remove page numbers 
 
-% Adjust the font and style of title and autor section
+% Adjust the font and style of title and author section.
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\@maketitle}{\Large}{\Large}{\typeout{OK 1}}{\typeout{Failed 1}}
 \patchcmd{\@maketitle}{\large \lineskip}{\large \lineskip}{\typeout{OK 2}}{\typeout{Failed 2}}
 \makeatother
 
-% set the Section headers, no subsections defined
+% Set the section headers, no subsections defined.
 \usepackage[explicit]{titlesec}
 \renewcommand{\thesection}{}
 \titleformat{\section}
@@ -39,7 +39,7 @@
 \titlespacing*{\section}
   {0pt}{5ex}{-1em}
 
-% build the keyword command
+% Build the keyword command.
 \newcommand{\keywords}[1]{\vspace{2ex} \noindent \textbf{Keywords:} #1}
 
 
@@ -50,12 +50,12 @@
 
 
 \begin{document}
-	\date{} % keeps the date frome being printed
+	\date{} % Keeps the date from being printed.
 	
-	% A short descriptive title of your work
+	% A short descriptive title of your work.
 	\title{\LaTeX\ Template for the International Modal Analysis Conference (IMAC)}
 	
-	% list the authors of the work. 
+	% List the authors of the work. 
 	\author{\vspace{.25in}\\
 	Austin Downey$^1$, Babe the Blue Ox$^2$, and Paul Bunyan$^3$\\ \\ % place a double line break after authors
 	 $^1$Department of Mechanical Engineering \\
