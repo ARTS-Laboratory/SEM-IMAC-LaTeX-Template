@@ -2,7 +2,7 @@
 %%% This is a template for the IMAC (International Modal Analysis Conference) style
 %%% 
 %%% This was developed by Austin Downey for SEM-IMAC XL in 2024.
-%%% Checked with: MikTex, not chekc with Texlive for 2024. 
+%%% Checked with MikTex, not checked with Texlive for 2024. 
 %%% The repository associated with this template can be found at https://github.com/austindowney/SEM-IMAC-LaTeX-Template
 %%% 
 
@@ -30,7 +30,7 @@
 \newcommand{\removeperiod}{\@ifnextchar.{\@gobble}\relax}		% added to help with removing the period after the year.
 \makeatother
 
-% Adjust the font and style of title and author section.
+% Adjust the font and style of the title and author section.
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\@maketitle}{\Large}{\Large}{\typeout{OK 1}}{\typeout{Failed 1}}
@@ -80,7 +80,7 @@
 	
 	\section{Introduction}
 	
-		Every good paper needs to cite some prior work from IMAC \cite{Downey2021OpenVibrations,Ishrat2019RealtimeForecasting,Downey2020Millisecondmodelupdating,Downey2016HighCapacityVariable}, but should also reference figures and equations in the text. For example, Figure~\ref{fig:suspension} shows an image of a car suspension that is in the public domain. The displacement of the time can be modeled as a 1-DOF system as shown in equation~\ref{eq:1-DOF}.
+		Every good paper needs to cite some prior work from IMAC \cite{Downey2021OpenVibrations,Singh2021RealTimeForecasting,Downey2020Millisecondmodelupdating,Downey2016HighCapacityVariable}, but should also reference figures and equations in the text. For example, Figure~\ref{fig:suspension} shows an image of a car suspension that is in the public domain. The displacement of the time can be modeled as a 1-DOF system as shown in equation~\ref{eq:1-DOF}.
 		\begin{equation}
 		m\ddot{x} + c\dot{x} + kx = F
 		\label{eq:1-DOF}

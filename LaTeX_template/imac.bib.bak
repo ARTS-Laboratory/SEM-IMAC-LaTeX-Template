@@ -42,15 +42,12 @@
   url    = {https://github.com/austindowney/Open-Vibrations},
 }
 
-@InCollection{Singh2021RealTimeForecasting,
+@InProceedings{Ishrat2019RealtimeForecasting,
   author    = {Ishrat Singh and Philip Conrad and Puja Chowdhury and Jason D. Bakos and Austin Downey},
-  booktitle = {Data Science in Engineering, Volume 9},
-  publisher = {Springer International Publishing},
-  title     = {Real-Time Forecasting of Vibrations with Non-stationarities},
+  booktitle = {IMAC 39},
+  title     = {Real-time Forecasting of Vibrations with Nonstationarities},
   year      = {2021},
-  month     = {oct},
-  pages     = {21--29},
-  doi       = {10.1007/978-3-030-76004-5_4},
+  month     = {Febuary},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
