@@ -5,4 +5,5 @@
 *.blg
 *.aux
 *.gz
-*.gz
+*.bak
+*.tmp
