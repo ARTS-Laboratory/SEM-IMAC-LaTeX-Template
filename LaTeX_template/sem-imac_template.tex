@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%% SEM-IMAC_template.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% This is a template for the IMAC (International Modal Analysis Conference) style
 %%% 
-%%% This was developed by Austin Downey for SEM-IMAC XL in 2022.
-%%% Checked with: Texlive 2022, MikTex (updated 2021), Texlive 2019. 
+%%% This was developed by Austin Downey for SEM-IMAC XL in 2024.
+%%% Checked with: MikTex, not chekc with Texlive for 2024. 
 %%% The repository associated with this template can be found at https://github.com/austindowney/SEM-IMAC-LaTeX-Template
 %%% 
 
@@ -23,7 +23,12 @@
 \usepackage{amsmath}				% added for fonts
 \usepackage{amsfonts}				% added for fonts
 \usepackage{cite}					% added to allow for ranges in a list of citations
-\usepackage{nopageno} % added to remove page numbers 
+\usepackage{nopageno} 				% added to remove page numbers 
+
+
+\makeatletter
+\newcommand{\removeperiod}{\@ifnextchar.{\@gobble}\relax}		% added to help with removing the period after the year.
+\makeatother
 
 % Adjust the font and style of title and author section.
 \usepackage{etoolbox}
@@ -84,7 +89,7 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=2in]{figures/papernum_dow_Fig1.jpg}
+			\includegraphics[width=2in]{papernum_dow_Fig1.jpg}
 			\caption{A public domain picture of car suspension that is designed for vibration control.}
 			\label{fig:suspension}
 		\end{figure}

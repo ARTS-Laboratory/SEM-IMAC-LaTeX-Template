@@ -3,6 +3,8 @@
 	% Austin Downey changed the unsrt file for the SEM-IMAC confrences. Added:
 	% FUNCTION {quote}
 	% changed { "t" change.case$ } to { "t" change.case$ quote}
+	% On or around 277, I put the year in brackets. I also removed the month to match the format from prior years and remove the period using this example https://tex.stackexchange.com/questions/346144/how-to-modify-apalike-bst-to-remove-period-after-author-year.
+	% On or around line 198 chagned {ff~}{vv~}{ll}{, jj} to {vv~}{ll}{, f{.}.}{, jj} to make the name style "Downey, A." for names. From this example https://tex.stackexchange.com/questions/542613/how-do-i-make-first-names-abbreviated-and-be-listed-as-surname-first-name-in-na
 
    % Version 0.99b (8-Dec-10 release) for BibTeX versions 0.99a or later.
    % Copyright (C) 1984, 1985, 1988, 2010 Howard Trickey and Oren Patashnik.
@@ -193,7 +195,7 @@ FUNCTION {format.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
+    { s nameptr "{vv~}{ll}{, f{.}.}{, jj}" format.name$ 't :=
       nameptr #1 >
         { namesleft #1 >
             { ", " * t * }
@@ -274,23 +276,32 @@ FUNCTION {n.dashify}
   while$
 }
 
-FUNCTION {format.date}
-{ year empty$
-    { month empty$
-        { "" }
-        { "there's a month but no year in " cite$ * warning$
-          month
-        }
-      if$
-    }
-    { month empty$
-        'year
-        { month " " * year * }
-      if$
-    }
-  if$
-}
+% FUNCTION {format.date}
+% { year empty$
+%     { month empty$
+%         { "" }
+%         { "there's a month but no year in " cite$ * warning$
+%           month
+%         }
+%       if$
+%     }
+%     { month empty$
+%         'year
+%         { month " " * year * }
+%       if$
+%     }
+%   if$
+% }
 
+FUNCTION {format.date}
+  { year empty$
+    { "" }
+    { year " (" swap$ * extra.label * ")\removeperiod" *}
+  if$
+  before.all 'output.state :=
+  }
+ 
+ 
 FUNCTION {format.btitle}
 { title emphasize
 }
