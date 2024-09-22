@@ -40,7 +40,7 @@ ENTRY
     year
   }
   {}
-  { label }
+  { label extra.label sort.label }
 
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
 
